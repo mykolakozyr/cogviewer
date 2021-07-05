@@ -2,19 +2,19 @@ import streamlit as st
 
 import streamlit.components.v1 as components  # Import Streamlit
 
-MAGE_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/world-map_1f5fa-fe0f.png"
+MAP_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/world-map_1f5fa-fe0f.png"
 
 
 # Set page title and favicon.
 st.set_page_config(
     page_title="COG Viewer", 
-    page_icon=MAGE_EMOJI_URL,
+    page_icon=MAP_EMOJI_URL,
     layout="wide"
 )
 
 # Display header.
 st.markdown("<br>", unsafe_allow_html=True)
-st.image(MAGE_EMOJI_URL, width=80)
+st.image(MAP_EMOJI_URL, width=80)
 
 """
 # Cloud Optimized GeoTIFF Viewer
