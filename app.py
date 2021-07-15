@@ -1,5 +1,6 @@
 import streamlit as st
-
+import os
+import re
 import streamlit.components.v1 as components  # Import Streamlit
 
 MAP_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/world-map_1f5fa-fe0f.png"
@@ -20,6 +21,26 @@ st.image(MAP_EMOJI_URL, width=80)
 # Cloud Optimized GeoTIFF Viewer
 """
 
+code = """
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WX7731EL0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4WX7731EL0');
+    </script>
+"""
+
+a=os.path.dirname(st.__file__)+'/static/index.html'
+with open(a, 'r') as f:
+    data=f.read()
+    with open(a, 'w') as ff:
+        newdata=re.sub('<head>','<head>'+code,data)
+        ff.write(newdata)
+
+
 coglink = st.text_input('Please insert the link to your COG file and press Enter', 'https://cogviewerapp.s3.eu-central-1.amazonaws.com/australia.tif')
 
 # Render the HTML component with the main map
@@ -37,17 +58,6 @@ components.html('''
         top: 0;
       }
     </style>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WX7731EL0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-4WX7731EL0');
-    </script>
-    
   </head>
   <body>
     <div id="map"></div>
