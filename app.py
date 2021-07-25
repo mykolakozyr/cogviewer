@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import pathlib
 import re
 import streamlit.components.v1 as components  # Import Streamlit
 
@@ -30,8 +31,8 @@ code = """
       gtag('config', '"""+tag+"""');
     </script>g
 """
-
-a=os.path.dirname(st.__file__)+'/static/index.html'
+a = pathlib.Path(st.__path__[0]) / 'static/index.html'
+#a=os.path.dirname(st.__file__)+'/static/index.html'
 with open(a, 'r') as f:
     data=f.read()
     with open(a, 'w') as ff:
