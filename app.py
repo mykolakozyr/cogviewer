@@ -31,7 +31,7 @@ code = """
       gtag('config', '"""+tag+"""');
     </script>
 """
-a = pathlib.Path(st.__path__[0]) / 'static/app.py'
+a = pathlib.Path(st.__path__[0]) / 'static/index.html'
 #a=os.path.dirname(st.__file__)+'/static/index.html'
 with open(a, 'r') as f:
     data=f.read()
