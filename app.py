@@ -18,18 +18,19 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.image(MAP_EMOJI_URL, width=80)
 
 """
-# Cloud Optimized GeoTIFF Viewer
+Google Tag
 """
+tag = st.secrets["tag"]
 
 code = """
 <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WX7731EL0"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id="""+tag+""""></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-4WX7731EL0');
+      gtag('config', '"""+tag+"""');
     </script>
 """
 
@@ -40,7 +41,9 @@ with open(a, 'r') as f:
         newdata=re.sub('<head>','<head>'+code,data)
         ff.write(newdata)
 
-
+"""
+# Cloud Optimized GeoTIFF Viewer
+"""
 coglink = st.text_input('Please insert the link to your COG file and press Enter', 'https://cogviewerapp.s3.eu-central-1.amazonaws.com/australia.tif')
 
 # Render the HTML component with the main map
