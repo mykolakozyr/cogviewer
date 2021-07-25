@@ -17,9 +17,6 @@ st.set_page_config(
 st.markdown("<br>", unsafe_allow_html=True)
 st.image(MAP_EMOJI_URL, width=80)
 
-"""
-Google Tag
-"""
 tag = st.secrets["tag"]
 
 code = """
@@ -31,7 +28,7 @@ code = """
       gtag('js', new Date());
 
       gtag('config', '"""+tag+"""');
-    </script>
+    </script>g
 """
 
 a=os.path.dirname(st.__file__)+'/static/index.html'
