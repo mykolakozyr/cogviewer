@@ -29,7 +29,7 @@ code = """
       gtag('js', new Date());
 
       gtag('config', '"""+tag+"""');
-    </script>g
+    </script>
 """
 a = pathlib.Path(st.__path__[0]) / 'static/index.html'
 #a=os.path.dirname(st.__file__)+'/static/index.html'
