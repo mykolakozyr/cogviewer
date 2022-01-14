@@ -18,27 +18,6 @@ st.set_page_config(
 st.markdown("<br>", unsafe_allow_html=True)
 st.image(MAP_EMOJI_URL, width=80)
 
-tag = st.secrets["tag"]
-
-code = """
-<!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id="""+tag+""""></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', '"""+tag+"""');
-    </script>
-"""
-a = pathlib.Path(st.__path__[0]) / 'static/index.html'
-#a=os.path.dirname(st.__file__)+'/static/index.html'
-with open(a, 'r') as f:
-    data=f.read()
-    with open(a, 'w') as ff:
-        newdata=re.sub('<head>','<head>'+code,data)
-        ff.write(newdata)
-
 """
 # Cloud Optimized GeoTIFF Viewer
 """
