@@ -99,7 +99,7 @@ The core of the code to render COG is mostly from [this example](https://github.
 ### QA
 - ✅ COG in EPSG:3857
 - ✅ COG in UTM projections
-- :question: BigTIFF support - to be tested
+- ✅ BigTIFF support
 ### Known Limitations
 - :warning: NULL Values returned as black
 - :warning: Bands' combinations are not configurable
