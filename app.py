@@ -4,7 +4,7 @@ import pathlib
 import re
 import streamlit.components.v1 as components  # Import Streamlit
 
-MAP_EMOJI_URL = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/world-map_1f5fa-fe0f.png"
+MAP_EMOJI_URL = "https://em-content.zobj.net/source/apple/391/world-map_1f5fa-fe0f.png"
 
 
 # Set page title and favicon.
